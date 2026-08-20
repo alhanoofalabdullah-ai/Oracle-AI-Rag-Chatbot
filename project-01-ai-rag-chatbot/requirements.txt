@@ -1,0 +1,13 @@
+streamlit>=1.45,<2
+langchain>=0.3,<2
+langchain-core>=0.3,<2
+langchain-openai>=0.3,<2
+openai>=1.70,<3
+oracledb>=3.1,<4
+pypdf>=5.4,<7
+python-docx>=1.1,<2
+python-dotenv>=1.1,<2
+pydantic>=2.10,<3
+pydantic-settings>=2.8,<3
+tenacity>=9,<10
+pytest>=8,<9
