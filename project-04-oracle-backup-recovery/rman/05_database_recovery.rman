@@ -1,0 +1,12 @@
+-- =========================================================
+-- Database Recovery
+-- =========================================================
+
+RUN {
+
+    RESTORE DATABASE
+        VALIDATE;
+
+    RECOVER DATABASE
+        VALIDATE;
+}
