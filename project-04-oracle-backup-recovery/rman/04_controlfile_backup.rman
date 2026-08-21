@@ -1,0 +1,18 @@
+-- =========================================================
+-- Controlfile and SPFILE Backup
+-- =========================================================
+
+RUN {
+
+    ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+
+    BACKUP CURRENT CONTROLFILE
+        TAG 'CONTROLFILE_BACKUP';
+
+    BACKUP SPFILE
+        TAG 'SPFILE_BACKUP';
+
+    RELEASE CHANNEL c1;
+}
+
+LIST BACKUP;
