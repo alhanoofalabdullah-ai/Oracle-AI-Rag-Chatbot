@@ -1,7 +1,7 @@
 
 ---
 
-# 23. `docs/performance-monitoring.md`
+# `docs/performance-monitoring.md`
 
 ```markdown
 # Performance Monitoring
