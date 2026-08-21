@@ -1,0 +1,22 @@
+-- =========================================================
+-- Full Oracle Database Backup
+-- =========================================================
+
+RUN {
+
+    ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+
+    BACKUP AS COMPRESSED BACKUPSET
+        DATABASE
+        TAG 'FULL_DATABASE_BACKUP';
+
+    BACKUP CURRENT CONTROLFILE
+        TAG 'CONTROLFILE_BACKUP';
+
+    BACKUP SPFILE
+        TAG 'SPFILE_BACKUP';
+
+    RELEASE CHANNEL c1;
+}
+
+LIST BACKUP SUMMARY;
