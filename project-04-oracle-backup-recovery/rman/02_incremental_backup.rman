@@ -1,0 +1,17 @@
+-- =========================================================
+-- Incremental Level 1 Backup
+-- =========================================================
+
+RUN {
+
+    ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+
+    BACKUP AS COMPRESSED BACKUPSET
+        INCREMENTAL LEVEL 1
+        DATABASE
+        TAG 'INCREMENTAL_LEVEL_1';
+
+    RELEASE CHANNEL c1;
+}
+
+LIST BACKUP SUMMARY;
