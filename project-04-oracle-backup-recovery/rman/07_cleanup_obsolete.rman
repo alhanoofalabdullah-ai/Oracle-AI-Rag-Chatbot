@@ -1,0 +1,14 @@
+-- =========================================================
+-- RMAN Retention / Obsolete Backup Cleanup
+-- =========================================================
+
+CONFIGURE RETENTION POLICY
+    TO RECOVERY WINDOW OF 7 DAYS;
+
+CROSSCHECK BACKUP;
+
+CROSSCHECK ARCHIVELOG ALL;
+
+REPORT OBSOLETE;
+
+DELETE NOPROMPT OBSOLETE;
