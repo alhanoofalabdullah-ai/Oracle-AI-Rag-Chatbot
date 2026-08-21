@@ -1,0 +1,17 @@
+-- =========================================================
+-- Archive Log Backup
+-- =========================================================
+
+RUN {
+
+    ALLOCATE CHANNEL c1 DEVICE TYPE DISK;
+
+    BACKUP AS COMPRESSED BACKUPSET
+        ARCHIVELOG ALL
+        TAG 'ARCHIVELOG_BACKUP'
+        DELETE INPUT;
+
+    RELEASE CHANNEL c1;
+}
+
+LIST BACKUP OF ARCHIVELOG ALL;
