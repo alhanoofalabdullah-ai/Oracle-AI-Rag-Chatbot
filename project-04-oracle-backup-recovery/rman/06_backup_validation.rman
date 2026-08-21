@@ -1,0 +1,14 @@
+-- =========================================================
+-- RMAN Backup Validation
+-- =========================================================
+
+RUN {
+
+    VALIDATE DATABASE;
+
+    VALIDATE BACKUPSET ALL;
+
+    VALIDATE ARCHIVELOG ALL;
+}
+
+LIST FAILURE;
