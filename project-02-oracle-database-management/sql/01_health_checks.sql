@@ -1,17 +1,35 @@
-from app.logging_config import configure_logging
-from app.config import get_settings
-from app.ui.dashboard import run_dashboard
+-- ==========================================================
+-- Oracle Database Health Checks
+-- Project 02
+-- ==========================================================
+
+-- Database status
+SELECT
+    name,
+    db_unique_name,
+    open_mode,
+    database_role,
+    protection_mode
+FROM v$database;
 
 
-def main():
-    settings = get_settings()
+-- Instance status
+SELECT
+    instance_name,
+    host_name,
+    version,
+    status,
+    startup_time
+FROM v$instance;
 
-    configure_logging(
-        settings.log_level
-    )
 
-    run_dashboard()
+-- Database role
+SELECT
+    database_role
+FROM v$database;
 
 
-if __name__ == "__main__":
-    main()
+-- Open mode
+SELECT
+    open_mode
+FROM v$database;
