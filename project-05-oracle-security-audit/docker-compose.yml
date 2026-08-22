@@ -1,0 +1,15 @@
+services:
+
+  oracle-security-audit:
+
+    build: .
+
+    container_name: oracle-security-audit
+
+    env_file:
+      - .env
+
+    ports:
+      - "8501:8501"
+
+    restart: unless-stopped
